@@ -1,0 +1,5 @@
+speech_recognition
+googletrans
+pydub
+webvtt
+moviepy
