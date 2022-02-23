@@ -30,8 +30,8 @@ def getTime(milli):
 def splitter(src, dest, subDest, fileName, audioFolder):
     # Input audio file to be sliced
     vttEn = WebVTT()
-    vttFr = WebVTT()
-    translator = Translator()
+    # vttFr = WebVTT()
+    # translator = Translator()
     audio = AudioSegment.from_wav(src)
 
     # Length of the audiofile in milliseconds
@@ -121,14 +121,14 @@ def splitter(src, dest, subDest, fileName, audioFolder):
 
             # If recognized, write into the file.
             captionEn = Caption('00:{0}.000'.format(getTime(start)),'00:{0}.000'.format(getTime(end)),rec)
-            recFr = translator.translate(rec, dest='fr')
-            captionFr = Caption(
-                '00:{0}.000'.format(getTime(start)),
-                '00:{0}.000'.format(getTime(end)),
-                recFr.text)
+            # recFr = translator.translate(rec, dest='fr')
+            # captionFr = Caption(
+            #     '00:{0}.000'.format(getTime(start)),
+            #     '00:{0}.000'.format(getTime(end)),
+            #     recFr.text)
 
             vttEn.captions.append(captionEn)
-            vttFr.captions.append(captionFr)
+            # vttFr.captions.append(captionFr)
             fh.write(rec + ". \n ")
 
             # If google could not understand the audio
@@ -146,7 +146,7 @@ def splitter(src, dest, subDest, fileName, audioFolder):
         if flag == 1:
             fh.close()
             vttEn.save(subDest + fileName + '.en.vtt')
-            vttFr.save(subDest + fileName + '.fr.vtt')
+            # vttFr.save(subDest + fileName + '.fr.vtt')
             deleteAllFile(dest)
             deleteAllFile(audioFolder)
             break
@@ -243,8 +243,10 @@ def silence_based_conversion(path):
 def video_to_audio(fileName, destination):
     try:
         file, file_extension = os.path.splitext(fileName)
-        file = pipes.quote(file)
-        video_to_wav = 'ffmpeg -i ' + file + file_extension + ' ' + destination + '.wav'
+        file = pipes.quote(fileName)
+        print("file")
+        print(file)
+        video_to_wav = 'ffmpeg -i ' + file  + ' ' + destination + '.wav'
         final_audio = 'lame ' + destination + '.wav' + ' ' + file + '.mp3'
         os.system(video_to_wav)
         os.system(final_audio)
@@ -252,7 +254,7 @@ def video_to_audio(fileName, destination):
         os.remove(file + '.mp3')
         print("sucessfully converted ", fileName, " into audio!")
     except OSError as err:
-        print(err.reason)
+        print(err)
         exit(1)
 
 
