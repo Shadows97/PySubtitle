@@ -3,3 +3,5 @@ googletrans
 pydub
 webvtt-py
 moviepy
+ffmpeg-python
+google-cloud-speech

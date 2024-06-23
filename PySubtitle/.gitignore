@@ -1,0 +1,4 @@
+*.vtt
+.env
+.vscode
+.venv
