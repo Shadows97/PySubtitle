@@ -1,6 +1,13 @@
 # PySubtitle
 
-A brief description of what your library does and how it can be used to extract audio from video files, convert audio to text using Google's speech recognition services, and generate VTT files for subtitles.
+PySubtitle is a Python library designed to automate the process of generating subtitles for video files. It extracts audio from video files, converts the audio to text using Google's speech recognition services, and generates VTT (Web Video Text Tracks) files for subtitles. This library is particularly useful for creating subtitles for videos in various languages, making content more accessible to a wider audience.
+
+## Features
+
+- **Audio Extraction**: Extracts audio from video files using `ffmpeg`.
+- **Speech Recognition**: Converts audio to text using Google Cloud Speech-to-Text API.
+- **Subtitle Generation**: Creates VTT files from the transcribed text, with accurate timing and synchronization.
+- **Cross-Platform**: Works on Windows, macOS, and Linux.
 
 ## Prerequisites
 
