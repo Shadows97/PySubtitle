@@ -1,0 +1,4 @@
+ffmpeg-python
+pydub
+SpeechRecognition
+webvtt-py
