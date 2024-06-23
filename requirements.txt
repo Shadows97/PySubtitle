@@ -1,5 +1,5 @@
-SpeechRecognition
-googletrans
-pydub
-webvtt-py
-moviepy
+pydub==0.25.1
+SpeechRecognition==3.10.4
+webvtt-py==0.5.1
+moviepy==1.0.3
+ffmpeg-python==0.2.0

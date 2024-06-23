@@ -1,1 +1,6 @@
 *.vtt
+.env
+.vscode
+.venv
+*.json
+.DS_Store
