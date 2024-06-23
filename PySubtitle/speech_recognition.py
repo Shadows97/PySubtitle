@@ -6,7 +6,9 @@ from pydub import AudioSegment
 from pydub.silence import split_on_silence
 import speech_recognition as sr
 
-def audio_to_text(audio_path):
+
+
+def audio_to_text(audio_path, source_language=""):
     recognizer = sr.Recognizer()
     sound = AudioSegment.from_wav(audio_path)
     chunks = split_on_silence(sound,
@@ -29,7 +31,10 @@ def audio_to_text(audio_path):
             with sr.AudioFile(chunk_filename) as source:
                 audio = recognizer.record(source)
                 try:
-                    text = recognizer.recognize_google(audio)
+                    if source_language == "":
+                        text = recognizer.recognize_google(audio)
+                    else:
+                        text = recognizer.recognize_google(audio, language=source_language)
                     full_text.append(text)
                 except sr.UnknownValueError:
                     full_text.append("")

@@ -4,6 +4,7 @@ sys.path.insert(0, '../PySubtitle')
 from PySubtitle.audio_extraction import extract_audio
 from PySubtitle.speech_recognition import audio_to_text
 from PySubtitle.vtt_generation import generate_vtt
+from PySubtitle.languages import Languages
 
 def main():
     # Chemin vers la vidéo source
@@ -14,7 +15,7 @@ def main():
     print(f"Audio extrait et sauvegardé à : {audio_path}")
     
     # Convertir l'audio en texte
-    transcripts, durations = audio_to_text(audio_path)
+    transcripts, durations = audio_to_text(audio_path, source_language=Languages.ENGLISH.value)
     print("Transcription terminée.")
     
     # Générer le fichier VTT

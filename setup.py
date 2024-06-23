@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='PySubtitle',
-    version='0.1.0',
+    version='0.1.2',
     author='Shadows97',
     author_email='mpoderrick97@gmail.com',
     description='A python library to generate subtitles from a video',

@@ -5,6 +5,7 @@ requirements.txt
 setup.py
 PySubtitle/__init__.py
 PySubtitle/audio_extraction.py
+PySubtitle/languages.py
 PySubtitle/speech_recognition.py
 PySubtitle/vtt_generation.py
 PySubtitle.egg-info/PKG-INFO
