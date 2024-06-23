@@ -52,6 +52,7 @@ Here is a simple example of how to use this library:
 from PySubtitle.audio_extraction import extract_audio
 from PySubtitle.speech_recognition import audio_to_text
 from PySubtitle.vtt_generation import generate_vtt
+from PySubtitle.languages import Languages
 
 # Path to your video file
 video_path = 'path/to/your/video.mp4'
@@ -60,7 +61,7 @@ video_path = 'path/to/your/video.mp4'
 audio_path = extract_audio(video_path)
 
 # Convert audio to text
-transcripts, durations = audio_to_text(audio_path)
+transcripts, durations = audio_to_text(audio_path, Languages.ENGLISH.value)
 
 # Generate VTT file
 vtt_file = 'output.vtt'

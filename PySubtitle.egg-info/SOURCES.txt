@@ -5,6 +5,7 @@ requirements.txt
 setup.py
 PySubtitle/__init__.py
 PySubtitle/audio_extraction.py
+PySubtitle/languages.py
 PySubtitle/speech_recognition.py
 PySubtitle/vtt_generation.py
 PySubtitle.egg-info/PKG-INFO
@@ -13,7 +14,6 @@ PySubtitle.egg-info/dependency_links.txt
 PySubtitle.egg-info/requires.txt
 PySubtitle.egg-info/top_level.txt
 example/example_usage.py
-example/output.vtt
 tests/__init__.py
 tests/chunk0.wav
 tests/test.mp4
